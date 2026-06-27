@@ -133,6 +133,10 @@ const brandPartners = [
   {
     name: "Nike",
     mark: "nike",
+    logo: "/sportive/vendor-logos/nike.svg",
+    product: "/sportive/shop-media/nike-3.png",
+    productTitle: "Nike Men's Air VaporMax Plus",
+    productHref: "https://shopsportive.com/products/nike-mens-air-vapormax-plus-shoes-university-red",
     headline: "Drop Zone",
     body: "Launch access, size-filtered alerts, reserve interest, and store pickup demand capture.",
     media: "SNKRS-style launch cadence, Sportive-owned wallet redemption, location-aware drops.",
@@ -141,6 +145,10 @@ const brandPartners = [
   {
     name: "Jordan",
     mark: "jordan",
+    logo: "/sportive/vendor-logos/jordan.svg",
+    product: "/sportive/shop-media/jordan-2.png",
+    productTitle: "Air Jordan 1 Retro High OG",
+    productHref: "https://shopsportive.com/products/nike-mens-air-jordan-1-retro-high-og-shoes-white-green-glow-black",
     headline: "Launch Alerts",
     body: "High-intent release notifications, visit bonuses, and member-only follow-up journeys.",
     media: "Release calendar, opt-in audience, post-drop retention, and store visit measurement.",
@@ -149,6 +157,10 @@ const brandPartners = [
   {
     name: "adidas",
     mark: "adidas",
+    logo: "/sportive/vendor-logos/adidas.svg",
+    product: "/sportive/shop-media/adidas-2.png",
+    productTitle: "adidas Samba OG",
+    productHref: "https://shopsportive.com/products/adidas-womens-samba-og-shoes-core-black-preloved-red-cream-white",
     headline: "3-Stripes Weekend",
     body: "Lifestyle bundles, Originals storytelling, app-only wallet offers, and school-season pushes.",
     media: "Campaign landing page, bundle logic, member offer wallet, and ecommerce attribution.",
@@ -157,6 +169,10 @@ const brandPartners = [
   {
     name: "New Balance",
     mark: "newbalance",
+    logo: "/sportive/vendor-logos/new-balance.svg",
+    product: "/sportive/shop-media/new-balance-1.png",
+    productTitle: "New Balance 1906R",
+    productHref: "https://shopsportive.com/products/new-balance-unisex-1906r-shoes-arid-stone-permafrost",
     headline: "Fit Lab",
     body: "Comfort, width, arch, and repeat purchase flows built around fit confidence.",
     media: "Fit profile, staff picks, in-store scan, and replacement reminder automation.",
@@ -165,10 +181,65 @@ const brandPartners = [
   {
     name: "On Cloud",
     mark: "oncloud",
+    logo: "/sportive/vendor-logos/on-cloud.svg",
+    product: "/sportive/shop-media/on-2.png",
+    productTitle: "On Cloudnova 2",
+    productHref: "https://shopsportive.com/products/on-running-womens-cloudnova-2-shoes-ice-sand",
     headline: "Comfort Test",
     body: "Try-on appointments, event check-ins, work-comfort segments, and Cloud replacement timing.",
     media: "Appointment booking, QR check-in, profile capture, and local event conversion.",
     href: "/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns"
+  }
+];
+
+const shopMedia = [
+  {
+    brand: "Nike",
+    logo: "/sportive/vendor-logos/nike.svg",
+    title: "Air VaporMax Plus launch heat",
+    body: "Real Sportive product media becomes the launch hero for saved-size alerts and reserve-interest flows.",
+    src: "/sportive/shop-media/nike-3.png",
+    href: "https://shopsportive.com/products/nike-mens-air-vapormax-plus-shoes-university-red"
+  },
+  {
+    brand: "Jordan",
+    logo: "/sportive/vendor-logos/jordan.svg",
+    title: "Jordan launch intent capture",
+    body: "Release-aware product storytelling links high-intent members to opt-in alerts and store visit rewards.",
+    src: "/sportive/shop-media/jordan-2.png",
+    href: "https://shopsportive.com/products/nike-mens-air-jordan-1-retro-high-og-shoes-white-green-glow-black"
+  },
+  {
+    brand: "adidas",
+    logo: "/sportive/vendor-logos/adidas.svg",
+    title: "Samba lifestyle bundle",
+    body: "A real storefront item becomes the anchor for app-only bundles, wallet offers, and attribution.",
+    src: "/sportive/shop-media/adidas-2.png",
+    href: "https://shopsportive.com/products/adidas-womens-samba-og-shoes-core-black-preloved-red-cream-white"
+  },
+  {
+    brand: "On Cloud",
+    logo: "/sportive/vendor-logos/on-cloud.svg",
+    title: "Cloud comfort appointment",
+    body: "On product media supports try-on booking, fit reminders, and comfort-focused segmentation.",
+    src: "/sportive/shop-media/on-2.png",
+    href: "https://shopsportive.com/products/on-running-womens-cloudnova-2-shoes-ice-sand"
+  },
+  {
+    brand: "New Balance",
+    logo: "/sportive/vendor-logos/new-balance.svg",
+    title: "1906R fit lab",
+    body: "Width, comfort, and repeat-purchase journeys can be merchandised with real Sportive catalog assets.",
+    src: "/sportive/shop-media/new-balance-1.png",
+    href: "https://shopsportive.com/products/new-balance-unisex-1906r-shoes-arid-stone-permafrost"
+  },
+  {
+    brand: "Sprayground",
+    logo: "/sportive/sportive_logo_hires_transparent.png",
+    title: "Accessory reward expansion",
+    body: "The same rewards engine can push backpacks, luggage, and cross-category add-ons beyond footwear.",
+    src: "/sportive/shop-media/sprayground-1.png",
+    href: "https://shopsportive.com/products/sprayground-broken-hearts-club-backpack-bag"
   }
 ];
 
@@ -208,40 +279,6 @@ const deckGallery = [
   title,
   src: `/sportive/media/slide-${String(index + 1).padStart(2, "0")}.png`
 }));
-
-function BrandMark({ type }: { type: string }) {
-  if (type === "nike") {
-    return (
-      <svg className="brand-svg nike-swoosh" viewBox="0 0 180 70" aria-hidden="true">
-        <path d="M12 45c35 15 88 2 154-35-50 45-104 66-143 61-17-2-27-11-11-26Z" />
-      </svg>
-    );
-  }
-
-  if (type === "adidas") {
-    return (
-      <svg className="brand-svg adidas-bars" viewBox="0 0 170 80" aria-hidden="true">
-        <rect x="18" y="42" width="28" height="34" transform="rotate(-22 32 59)" />
-        <rect x="67" y="25" width="28" height="51" transform="rotate(-22 81 50)" />
-        <rect x="116" y="8" width="28" height="68" transform="rotate(-22 130 42)" />
-      </svg>
-    );
-  }
-
-  if (type === "newbalance") {
-    return <span className="brand-wordmark nb-word">NB</span>;
-  }
-
-  if (type === "oncloud") {
-    return <span className="brand-wordmark on-word">On</span>;
-  }
-
-  if (type === "jordan") {
-    return <span className="brand-wordmark jordan-word">AIR</span>;
-  }
-
-  return <span className="brand-wordmark">{type}</span>;
-}
 
 export default function SportivePreview() {
   return (
@@ -300,11 +337,11 @@ export default function SportivePreview() {
           </div>
         </div>
         <div className="hero-strip">
-          <span>Preview</span>
-          <span>Brand Media</span>
-          <span>Enterprise</span>
-          <span>Pilot</span>
-          <span>Rollout</span>
+          <a href="#media">Preview</a>
+          <a href="#brand-media">Brand Media</a>
+          <a href="#enterprise">Enterprise</a>
+          <a href="#roadmap">Pilot</a>
+          <a href="#downloads">Rollout</a>
         </div>
       </section>
 
@@ -321,6 +358,33 @@ export default function SportivePreview() {
                 <h3>{title}</h3>
                 <p>{body}</p>
                 <span>Open visual</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-band real-media-section" id="real-media">
+        <div className="section-heading">
+          <p className="eyebrow">Real Sportive media</p>
+          <h2>Storefront product photography and vendor marks now drive the preview.</h2>
+          <p>
+            These cards use Sportive catalog assets and vendor marks as the raw
+            material for app campaigns, ads, wallet offers, and storefront attribution.
+          </p>
+        </div>
+        <div className="shop-media-grid">
+          {shopMedia.map(({ brand, logo, title, body, src, href }) => (
+            <a className="shop-media-card" href={href} target="_blank" rel="noreferrer" key={title}>
+              <div className="shop-media-art">
+                <Image className="shop-product" src={src} alt={`${title} product from Sportive`} width={900} height={900} />
+                <Image className="shop-logo" src={logo} alt={`${brand} logo`} width={220} height={110} />
+              </div>
+              <div className="shop-media-copy">
+                <span>{brand}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+                <b>Open Sportive product</b>
               </div>
             </a>
           ))}
@@ -352,17 +416,21 @@ export default function SportivePreview() {
           <h2>Nike, Jordan, adidas, New Balance, and On Cloud become first-class app destinations.</h2>
         </div>
         <div className="brand-partner-grid">
-          {brandPartners.map(({ name, mark, headline, body, media, href }) => (
-            <a className={`brand-partner-card ${mark}`} href={href} key={name}>
+          {brandPartners.map(({ name, mark, logo, product, productTitle, productHref, headline, body, media, href }) => (
+            <article className={`brand-partner-card ${mark}`} key={name}>
               <div className="brand-card-head">
-                <BrandMark type={mark} />
+                <Image className="brand-logo-img" src={logo} alt={`${name} logo`} width={180} height={92} />
                 <span>{name}</span>
               </div>
+              <a className="brand-product-link" href={productHref} target="_blank" rel="noreferrer">
+                <Image src={product} alt={`${productTitle} from Sportive`} width={520} height={520} />
+                <span>{productTitle}</span>
+              </a>
               <h3>{headline}</h3>
               <p>{body}</p>
               <div className="brand-media-note">{media}</div>
-              <span className="brand-card-cta">Open brand mockup</span>
-            </a>
+              <a className="brand-card-cta" href={href}>Open brand mockup</a>
+            </article>
           ))}
         </div>
       </section>
