@@ -108,6 +108,34 @@ const campaignMedia = [
   ]
 ];
 
+const deckGallery = [
+  "Cover",
+  "Executive answer",
+  "Website signals",
+  "Store footprint",
+  "Loyalty strategy",
+  "Customer journey",
+  "Core app screens",
+  "Brand hub",
+  "Nike and On concepts",
+  "Campaign pages",
+  "Loyalty model",
+  "Brand participation",
+  "POS strategy",
+  "Preview route",
+  "Architecture",
+  "Data model",
+  "Mobile build plan",
+  "Roadmap",
+  "Pilot scorecard",
+  "Approval gates",
+  "Codex handoff",
+  "Decision"
+].map((title, index) => ({
+  title,
+  src: `/sportive/media/slide-${String(index + 1).padStart(2, "0")}.png`
+}));
+
 export default function SportivePreview() {
   return (
     <main className="sportive-page">
@@ -186,6 +214,34 @@ export default function SportivePreview() {
         </div>
       </section>
 
+      <section className="section-band interactive-preview">
+        <div className="section-with-media interactive-layout">
+          <div className="section-heading">
+            <p className="eyebrow">Interactive media</p>
+            <h2>Live app mockup embedded inside the preview hub.</h2>
+            <p>
+              The interactive mockup remains available as a standalone download, and
+              this embedded view lets Sportive review the app experience without
+              leaving the client page.
+            </p>
+            <a
+              className="button secondary"
+              href="/sportive/Sportive_Rewards_App_Mockup_v3.html"
+              data-analytics-todo="embedded_mockup_open_click"
+            >
+              Open full mockup
+            </a>
+          </div>
+          <div className="iframe-shell">
+            <iframe
+              title="Sportive Rewards interactive app mockup"
+              src="/sportive/Sportive_Rewards_App_Mockup_v3.html"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="section-grid two-column">
         <div>
           <p className="eyebrow">Website findings</p>
@@ -250,6 +306,24 @@ export default function SportivePreview() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-band deck-gallery-section">
+        <div className="section-heading">
+          <p className="eyebrow">Deck media library</p>
+          <h2>Every presentation slide is available as browseable page media.</h2>
+        </div>
+        <div className="deck-gallery" aria-label="Sportive Rewards presentation slide thumbnails">
+          {deckGallery.map(({ title, src }, index) => (
+            <figure className="deck-thumb" key={src}>
+              <Image src={src} alt={`${title} slide thumbnail`} width={1467} height={825} />
+              <figcaption>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {title}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
