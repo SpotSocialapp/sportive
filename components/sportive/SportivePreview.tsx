@@ -67,19 +67,71 @@ const downloads = [
   ["Download Handoff", "/sportive/Sportive_Strategic500_Codex_Handoff_v3.md"]
 ];
 
+const mediaSlides = [
+  [
+    "Executive answer",
+    "Why Sportive needs an owned loyalty layer, not a generic discount program.",
+    "/sportive/media/slide-02.png"
+  ],
+  [
+    "Website signals",
+    "Stores, sizes, brands, sale language, and cart behavior are already visible.",
+    "/sportive/media/slide-03.png"
+  ],
+  [
+    "Core app screens",
+    "Rewards, wallet, and profile utility for repeat member behavior.",
+    "/sportive/media/slide-07.png"
+  ],
+  [
+    "Decision slide",
+    "Approve the preview route, then move into the MVP path.",
+    "/sportive/media/slide-22.png"
+  ]
+];
+
+const campaignMedia = [
+  [
+    "Nike and On / Cloud concepts",
+    "High-demand sneaker access and comfort-fit conversion examples.",
+    "/sportive/media/slide-09.png"
+  ],
+  [
+    "Brand campaign mockups",
+    "Reusable campaign screens for adidas, New Balance, Jordan, and Sprayground.",
+    "/sportive/media/slide-10.png"
+  ],
+  [
+    "Participation plan",
+    "Sportive-owned customer promise with formal brand approval checkpoints.",
+    "/sportive/media/slide-12.png"
+  ]
+];
+
 export default function SportivePreview() {
   return (
     <main className="sportive-page">
       <section className="hero section-band">
         <div className="hero-content">
-          <div className="logo-mark">
-            <Image
-              src="/sportive/sportive_logo_hires_transparent.png"
-              alt="Sportive"
-              width={760}
-              height={250}
-              priority
-            />
+          <div className="hero-media-stack">
+            <div className="logo-mark">
+              <Image
+                src="/sportive/sportive_logo_hires_transparent.png"
+                alt="Sportive"
+                width={760}
+                height={250}
+                priority
+              />
+            </div>
+            <div className="hero-slide">
+              <Image
+                src="/sportive/media/slide-01.png"
+                alt="Sportive Rewards client presentation cover"
+                width={1467}
+                height={825}
+                priority
+              />
+            </div>
           </div>
           <div className="hero-copy">
             <p className="eyebrow">Client preview hub</p>
@@ -116,6 +168,24 @@ export default function SportivePreview() {
         </div>
       </section>
 
+      <section className="section-grid media-library">
+        <div className="section-heading">
+          <p className="eyebrow">Media</p>
+          <h2>Client deck visuals are embedded throughout the preview.</h2>
+        </div>
+        <div className="media-card-grid">
+          {mediaSlides.map(([title, body, src]) => (
+            <article className="media-card" key={title}>
+              <Image src={src} alt={`${title} slide`} width={1467} height={825} />
+              <div>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section-grid two-column">
         <div>
           <p className="eyebrow">Website findings</p>
@@ -132,9 +202,19 @@ export default function SportivePreview() {
       </section>
 
       <section className="section-band stores">
-        <div className="section-heading">
-          <p className="eyebrow">Store footprint</p>
-          <h2>Five South Florida store nodes for pickup, visits, and pilots.</h2>
+        <div className="section-with-media">
+          <div className="section-heading">
+            <p className="eyebrow">Store footprint</p>
+            <h2>Five South Florida store nodes for pickup, visits, and pilots.</h2>
+          </div>
+          <div className="section-media-frame">
+            <Image
+              src="/sportive/media/slide-04.png"
+              alt="Sportive South Florida store footprint slide"
+              width={1467}
+              height={825}
+            />
+          </div>
         </div>
         <div className="store-grid">
           {stores.map(([name, line1, line2]) => (
@@ -178,6 +258,17 @@ export default function SportivePreview() {
           <p className="eyebrow">Branded campaign mockups</p>
           <h2>Campaign concepts show how rewards can become retail moments.</h2>
         </div>
+        <div className="campaign-media-grid">
+          {campaignMedia.map(([title, body, src]) => (
+            <article className="campaign-media" key={title}>
+              <Image src={src} alt={`${title} slide`} width={1467} height={825} />
+              <div>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
         <div className="campaign-grid">
           {campaigns.map(([title, body]) => (
             <article className="campaign-card" key={title}>
@@ -205,9 +296,19 @@ export default function SportivePreview() {
       </section>
 
       <section className="section-band commerce">
-        <div className="section-heading">
-          <p className="eyebrow">POS and ecommerce strategy</p>
-          <h2>Keep the first release static while planning the integration path.</h2>
+        <div className="section-with-media">
+          <div className="section-heading">
+            <p className="eyebrow">POS and ecommerce strategy</p>
+            <h2>Keep the first release static while planning the integration path.</h2>
+          </div>
+          <div className="section-media-frame">
+            <Image
+              src="/sportive/media/slide-13.png"
+              alt="Sportive POS and commerce strategy slide"
+              width={1467}
+              height={825}
+            />
+          </div>
         </div>
         <div className="commerce-grid">
           <article>
@@ -239,6 +340,14 @@ export default function SportivePreview() {
           <p className="eyebrow">Architecture</p>
           <h2>Static approval hub now, extensible product system later.</h2>
         </div>
+        <div className="wide-media-frame">
+          <Image
+            src="/sportive/media/slide-15.png"
+            alt="Sportive secure backend architecture slide"
+            width={1467}
+            height={825}
+          />
+        </div>
         <div className="architecture-grid">
           {architecture.map(([title, body]) => (
             <article className="arch-card" key={title}>
@@ -250,9 +359,19 @@ export default function SportivePreview() {
       </section>
 
       <section className="section-band roadmap-section">
-        <div className="section-heading">
-          <p className="eyebrow">Roadmap</p>
-          <h2>Move from client approval to controlled rollout.</h2>
+        <div className="section-with-media">
+          <div className="section-heading">
+            <p className="eyebrow">Roadmap</p>
+            <h2>Move from client approval to controlled rollout.</h2>
+          </div>
+          <div className="section-media-frame">
+            <Image
+              src="/sportive/media/slide-18.png"
+              alt="Sportive implementation roadmap slide"
+              width={1467}
+              height={825}
+            />
+          </div>
         </div>
         <div className="roadmap">
           {roadmap.map(([phase, detail], index) => (

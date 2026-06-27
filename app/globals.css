@@ -128,13 +128,41 @@ p {
   gap: 54px;
 }
 
+.hero-media-stack {
+  display: grid;
+  gap: 18px;
+}
+
 .logo-mark {
   display: grid;
-  min-height: 320px;
+  min-height: 210px;
   align-items: center;
   border: 1px solid rgba(14, 59, 24, 0.16);
   background: rgba(255, 253, 248, 0.72);
   padding: 28px;
+}
+
+.hero-slide,
+.section-media-frame,
+.wide-media-frame,
+.media-card,
+.campaign-media {
+  overflow: hidden;
+  border: 1px solid var(--sportive-line);
+  background: var(--sportive-white);
+}
+
+.hero-slide img,
+.section-media-frame img,
+.wide-media-frame img,
+.media-card img,
+.campaign-media img {
+  display: block;
+  width: 100%;
+}
+
+.hero-slide {
+  box-shadow: 0 18px 45px rgba(14, 59, 24, 0.13);
 }
 
 .hero-copy > p:not(.eyebrow) {
@@ -188,6 +216,48 @@ p {
 
 .hero-strip span:last-child {
   border-right: 0;
+}
+
+.media-library {
+  gap: 28px;
+}
+
+.media-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.media-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.media-card div,
+.campaign-media div {
+  padding: 16px;
+}
+
+.media-card p,
+.campaign-media p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+.section-with-media {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1.18fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.section-media-frame,
+.wide-media-frame {
+  box-shadow: 0 14px 34px rgba(14, 59, 24, 0.1);
+}
+
+.wide-media-frame {
+  max-width: 960px;
 }
 
 .check-list,
@@ -307,6 +377,13 @@ p {
 
 .campaign-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.campaign-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
 }
 
 .campaign-card {
@@ -442,17 +519,20 @@ p {
   .hero-content,
   .two-column,
   .downloads,
-  .mockup-layout {
+  .mockup-layout,
+  .section-with-media {
     grid-template-columns: 1fr;
   }
 
   .store-grid,
   .campaign-grid,
+  .media-card-grid,
   .architecture-grid,
   .roadmap {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .campaign-media-grid,
   .commerce-grid,
   .approval-grid {
     grid-template-columns: 1fr;
@@ -470,7 +550,7 @@ p {
   }
 
   .logo-mark {
-    min-height: 210px;
+    min-height: 160px;
     padding: 18px;
   }
 
@@ -497,6 +577,7 @@ p {
 
   .store-grid,
   .campaign-grid,
+  .media-card-grid,
   .architecture-grid,
   .roadmap {
     grid-template-columns: 1fr;
