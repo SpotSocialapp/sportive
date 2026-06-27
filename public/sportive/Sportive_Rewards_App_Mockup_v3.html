@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sportive Rewards App Mockup v3</title>
+<style>
+  :root{
+    --green:#24841f; --green2:#166414; --deep:#0e3b18; --orange:#e65a12; --orange2:#ff7a1a;
+    --cream:#f8f4ea; --sand:#efe3ce; --ink:#142015; --muted:#596656; --line:#e0d2bb; --white:#ffffff;
+    --nike:#111111; --on:#eef0f3; --adidas:#0c0c0c; --nb:#b41226; --jordan:#111111; --spray:#6438a8;
+    --shadow:0 24px 70px rgba(18,38,19,.18); --soft:0 12px 30px rgba(18,38,19,.12);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;background:var(--cream);color:var(--ink);}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,244,234,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,59,24,.1)}
+  .nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{width:260px;height:auto;display:block}.navlinks{display:flex;gap:18px;align-items:center;font-weight:800;color:var(--deep);font-size:14px}.pill{padding:12px 18px;border-radius:999px;background:var(--deep);color:white}.pill.orange{background:var(--orange)}
+  .hero{padding:70px 0 40px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;right:-180px;top:20px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(230,90,18,.18),rgba(36,132,31,.08),rgba(248,244,234,0) 68%)}
+  .heroGrid{display:grid;grid-template-columns:1.02fr .98fr;gap:42px;align-items:center;position:relative}
+  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:900;margin-bottom:18px}.h1{font-size:66px;line-height:.93;letter-spacing:-.06em;font-weight:950;color:var(--deep);margin:0 0 22px}.h1 span{color:var(--orange)}
+  .lead{font-size:22px;line-height:1.42;color:#445143;max-width:650px;margin:0 0 28px}.heroCtas{display:flex;gap:14px;flex-wrap:wrap}.cta{display:inline-flex;align-items:center;gap:10px;border-radius:18px;padding:16px 21px;font-weight:900;background:var(--deep);color:white;box-shadow:var(--soft)}.cta.secondary{background:white;color:var(--deep);border:1px solid var(--line)}
+  .statRow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;max-width:720px}.stat{background:white;border:1px solid rgba(14,59,24,.1);border-radius:22px;padding:20px;box-shadow:0 12px 25px rgba(0,0,0,.04)}.stat b{font-size:28px;color:var(--deep);display:block}.stat span{font-size:13px;color:var(--muted);font-weight:700}
+  .section{padding:62px 0}.sectionHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:32px}.section h2{font-size:42px;line-height:1.02;margin:0;color:var(--deep);letter-spacing:-.045em}.section p.sub{font-size:18px;line-height:1.45;color:var(--muted);max-width:640px;margin:0}.brandRail{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 0}.brandChip{padding:12px 16px;border-radius:16px;background:#fff;border:1px solid rgba(14,59,24,.1);font-weight:950;letter-spacing:.02em;box-shadow:0 8px 18px rgba(0,0,0,.04)}
+  .deviceStage{background:linear-gradient(135deg,#123d18,#1b6e1d 48%,#f36a16);border-radius:38px;padding:34px;box-shadow:var(--shadow);overflow:hidden;position:relative}.deviceStage:before{content:"";position:absolute;inset:auto -15% -40% auto;width:700px;height:700px;border-radius:50%;background:rgba(255,255,255,.08)}
+  .phones{display:grid;grid-template-columns:repeat(3, minmax(260px,1fr));gap:28px;position:relative}.phone{width:100%;max-width:326px;margin:0 auto;background:#111;border-radius:42px;padding:12px;box-shadow:0 30px 60px rgba(0,0,0,.28)}.screen{height:690px;border-radius:32px;background:#fbf7ef;overflow:hidden;position:relative}.status{height:36px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px;font-weight:900;color:#162016}.appHead{display:flex;align-items:center;justify-content:space-between;padding:10px 20px 8px}.appHead img{width:138px}.avatar{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:950}.screenContent{padding:12px 20px 22px}.screen h3{font-size:29px;line-height:1.02;margin:8px 0 8px;color:var(--deep);letter-spacing:-.04em}.screen .mini{font-size:13px;line-height:1.35;color:var(--muted);font-weight:700;margin:0 0 16px}.balance{border-radius:26px;background:var(--deep);padding:22px;color:#fff;position:relative;overflow:hidden;margin-bottom:16px}.balance:after{content:"";position:absolute;right:-30px;top:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.1)}.balance small{color:#ffc7a7;font-weight:950;letter-spacing:.12em}.balance b{font-size:42px;line-height:1;display:block;margin:8px 0 6px}.btn{display:inline-flex;background:var(--orange);color:#fff;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:950;margin-top:10px}.progress{height:11px;background:#e8dbc7;border-radius:99px;overflow:hidden;margin:10px 0 8px}.progress div{height:100%;background:var(--orange);border-radius:99px}.offer{background:#fff;border:1px solid rgba(14,59,24,.08);border-radius:22px;padding:15px 15px;margin:12px 0;box-shadow:0 8px 18px rgba(0,0,0,.04)}.offer .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f5eadb;color:var(--deep);font-size:10px;font-weight:950;margin-bottom:8px}.offer b{display:block;font-size:15px;color:var(--ink);margin-bottom:3px}.offer span{font-size:12px;color:var(--muted);font-weight:650;line-height:1.3}.navBottom{position:absolute;left:14px;right:14px;bottom:12px;height:56px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:space-around;box-shadow:0 -8px 30px rgba(0,0,0,.08)}.navItem{font-size:10px;font-weight:900;color:var(--muted);text-align:center}.navItem.active{color:var(--green)}
+  .brandHero{border-radius:28px;padding:22px;color:#fff;margin-bottom:14px;min-height:228px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.brandHero:before{content:"";position:absolute;right:-60px;bottom:-80px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.14)}.brandName{font-size:14px;letter-spacing:.12em;font-weight:950;text-transform:uppercase}.brandHero h4{font-size:34px;line-height:.98;margin:10px 0 0;letter-spacing:-.05em}.nike{background:linear-gradient(135deg,#0a0a0a,#2b2b2b)}.on{background:linear-gradient(135deg,#eef1f4,#b7c1c9);color:#101517}.adidas{background:linear-gradient(135deg,#070707,#363636)}.nb{background:linear-gradient(135deg,#b41226,#5d0712)}.jordan{background:linear-gradient(135deg,#111,#6b1515)}.spray{background:linear-gradient(135deg,#6438a8,#e65a12)}.brandHero.on .btn{background:#111}.brandHero.on .brandName{color:#1c252b}.campaignList{display:grid;gap:10px}.campaign{border-radius:18px;padding:13px 14px;background:#fff;border:1px solid rgba(14,59,24,.08);display:flex;justify-content:space-between;align-items:center;gap:12px}.campaign b{font-size:14px}.campaign span{font-size:11px;color:var(--muted);font-weight:750}.dot{width:12px;height:12px;border-radius:50%;background:var(--green);flex:0 0 auto}.dot.o{background:var(--orange)}.dot.b{background:#111}.dot.r{background:#b41226}.barcode{height:72px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;margin-top:16px;overflow:hidden}.bars{height:44px;width:230px;background:repeating-linear-gradient(90deg,#111 0 3px,#fff 3px 7px,#111 7px 9px,#fff 9px 16px)}
+  .storeCard{background:#fff;border-radius:22px;padding:17px;margin:11px 0;box-shadow:0 8px 18px rgba(0,0,0,.04);border:1px solid rgba(14,59,24,.08)}.storeCard b{display:block;font-size:15px;color:var(--deep)}.storeCard span{font-size:12px;color:var(--muted);font-weight:700}.storeBtns{display:flex;gap:8px;margin-top:10px}.tinyBtn{font-size:10px;font-weight:950;background:#f4ead9;color:var(--deep);padding:7px 10px;border-radius:999px}.tinyBtn.green{background:var(--green);color:white}
+  .matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.matrixCard{background:#fff;border:1px solid rgba(14,59,24,.1);border-radius:28px;padding:24px;box-shadow:var(--soft)}.matrixCard h3{font-size:24px;margin:0 0 10px;color:var(--deep)}.matrixCard p{font-size:15px;line-height:1.45;color:var(--muted);margin:0}.matrixCard .num{font-size:13px;color:var(--orange);font-weight:950;letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase}.routeBox{background:#0b2d13;color:white;border-radius:34px;padding:34px;box-shadow:var(--shadow)}.routeBox h3{font-size:32px;margin:0 0 12px}.routeBox code{background:rgba(255,255,255,.12);padding:8px 11px;border-radius:10px;color:#fff;font-weight:900}.routeGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.checklist{display:grid;gap:12px}.check{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px;font-weight:750;line-height:1.32}.caption{font-size:12px;color:#7a826f;margin-top:12px;font-weight:650}.footer{padding:54px 0 70px;background:#0e3b18;color:white}.footer .logo{filter:none;background:rgba(255,255,255,.08);border-radius:18px;padding:8px 12px}.footGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.footer h2{font-size:44px;letter-spacing:-.05em;line-height:1;margin:0 0 14px}.footer p{font-size:18px;line-height:1.45;color:#d9ead5;max-width:700px}.disclaimer{font-size:12px;line-height:1.45;color:#778270;margin-top:18px}
+  @media (max-width:980px){.heroGrid,.routeGrid,.footGrid{grid-template-columns:1fr}.phones{grid-template-columns:1fr}.matrix{grid-template-columns:1fr}.h1{font-size:48px}.section h2{font-size:34px}.navlinks{display:none}.statRow{grid-template-columns:1fr}.logo{width:220px}}
+  @media print{header{position:static}.phone{break-inside:avoid}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <img src="assets/sportive_logo_hires_transparent.png" class="logo" alt="Sportive" />
+    <div class="navlinks"><a href="#experience">Experience</a><a href="#campaigns">Brand Campaigns</a><a href="#route">Strategic500 Route</a><span class="pill">Client Preview v3</span></div>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap heroGrid">
+    <div>
+      <div class="eyebrow">Sportive Rewards digital loyalty system</div>
+      <h1 class="h1">Turn every store visit into a <span>member moment.</span></h1>
+      <p class="lead">A customer-facing rewards app and Strategic500 landing experience designed around Sportive's South Florida stores, brand drops, shoe-size personalization, and in-store redemption.</p>
+      <div class="heroCtas"><a class="cta" href="#experience">View App Mockups</a><a class="cta secondary" href="#route">Build at /sportive</a></div>
+      <div class="statRow">
+        <div class="stat"><b>5</b><span>publicly listed store locations</span></div>
+        <div class="stat"><b>8+</b><span>core brand categories on site</span></div>
+        <div class="stat"><b>1st-party</b><span>fit, preference, and purchase data</span></div>
+      </div>
+    </div>
+    <div class="deviceStage">
+      <div class="phones" style="grid-template-columns:1fr;">
+        <div class="phone" style="max-width:360px;">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>LTE 100%</span></div>
+            <div class="appHead"><img src="assets/sportive_logo_hires_transparent.png" alt="Sportive"/><div class="avatar">M</div></div>
+            <div class="screenContent">
+              <h3>Welcome back, Mia</h3><p class="mini">Dadeland has a Nike Jordan drop in your size. Claim access before the mall rush.</p>
+              <div class="balance"><small>MVP STATUS</small><b>2,840</b><span>Sportive Points</span><br><span class="btn">Open Wallet</span></div>
+              <div class="progress"><div style="width:72%"></div></div><p class="mini">660 pts to unlock $15 off</p>
+              <div class="offer"><span class="tag">NIKE DROP ALERT</span><b>Air Max / Jordan heat in Men 10.5</b><span>Reserve at Dadeland or Bayside for 24 hours.</span></div>
+              <div class="offer"><span class="tag">ON CLOUD TRY-ON</span><b>Cloud 6 comfort test at CocoWalk</b><span>Book a fitting session and earn bonus points.</span></div>
+            </div>
+            <div class="navBottom"><div class="navItem active">Home</div><div class="navItem">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="experience" class="section">
+  <div class="wrap">
+    <div class="sectionHeader"><h2>App experience mockups</h2><p class="sub">The app is designed as a loyalty and store-traffic engine first. Shopping can be layered in later through Shopify or the final POS strategy.</p></div>
+    <div class="deviceStage">
+      <div class="phones">
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">M</div></div>
+            <div class="screenContent"><h3>Rewards Home</h3><p class="mini">Personalized around store, size, family profiles, and purchase history.</p><div class="balance"><small>MVP STATUS</small><b>2,840</b><span>Sportive Points</span><br><span class="btn">Scan Wallet</span></div><div class="progress"><div style="width:72%"></div></div><div class="offer"><span class="tag">YOUR SIZE IS BACK</span><b>On Cloudmonster 3</b><span>Men 10.5 at Sawgrass Mall. Hold it today.</span></div><div class="offer"><span class="tag">FAMILY PROFILE</span><b>Back-to-school fit pass</b><span>Earn 2x points on kids footwear this weekend.</span></div></div>
+            <div class="navBottom"><div class="navItem active">Home</div><div class="navItem">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">S</div></div>
+            <div class="screenContent"><h3>Brand Hub</h3><p class="mini">Campaigns become segmented, store-specific, and measurable.</p><div class="brandHero nike"><div><div class="brandName">Nike / Jordan</div><h4>Drop Zone</h4></div><span class="btn">Get Alerted</span></div><div class="campaignList"><div class="campaign"><div><b>On Cloud Try-On</b><span>CocoWalk + Dadeland</span></div><span class="dot"></span></div><div class="campaign"><div><b>adidas 3-Stripes Weekend</b><span>Dolphin + Sawgrass</span></div><span class="dot b"></span></div><div class="campaign"><div><b>New Balance Fit Lab</b><span>All stores</span></div><span class="dot r"></span></div></div></div>
+            <div class="navBottom"><div class="navItem">Home</div><div class="navItem active">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">C</div></div>
+            <div class="screenContent"><h3>Offer Wallet</h3><p class="mini">QR/barcode redemption for in-store cashier flow and campaign attribution.</p><div class="balance"><small>APP-ONLY REWARD</small><b>$20 OFF</b><span>Valid on $120+ footwear purchase</span><div class="barcode"><div class="bars"></div></div></div><div class="offer"><span class="tag">BIRTHDAY MONTH</span><b>10% off one purchase</b><span>Available at all Sportive stores.</span></div><div class="offer"><span class="tag">ON CLOUD FIT</span><b>Book a try-on and earn 150 pts</b><span>Event check-in required.</span></div></div>
+            <div class="navBottom"><div class="navItem">Home</div><div class="navItem">Brands</div><div class="navItem active">Wallet</div><div class="navItem">Stores</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer">Manufacturer names are shown as concept campaign labels for presentation purposes. Final use of brand marks, logos, imagery, and co-branded offers requires Sportive and manufacturer approval.</p>
+  </div>
+</section>
+<section id="campaigns" class="section">
+  <div class="wrap">
+    <div class="sectionHeader"><h2>Branded marketing pages</h2><p class="sub">Each campaign can be segmented by size, store, purchase history, and preferred brand. These screens are designed for push notifications, QR redemption, and in-store event conversion.</p></div>
+    <div class="phones">
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">N</div></div><div class="screenContent"><div class="brandHero nike"><div><div class="brandName">Nike</div><h4>Air Max Heat Check</h4></div><span class="btn">Reserve My Size</span></div><p class="mini">Target: Nike/Jordan buyers, saved sizes, sneaker-drop shoppers.</p><div class="offer"><span class="tag">DROP ACCESS</span><b>Men 9-13 availability</b><span>Hold at Bayside or Dadeland for 24 hours.</span></div><div class="offer"><span class="tag">MVP BONUS</span><b>Double points on matching apparel</b><span>Only after qualifying footwear purchase.</span></div></div><div class="navBottom"><div class="navItem">Home</div><div class="navItem active">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">O</div></div><div class="screenContent"><div class="brandHero on"><div><div class="brandName">On / Cloud</div><h4>Cloud Comfort Test</h4></div><span class="btn">Book Try-On</span></div><p class="mini">Target: walkers, runners, medical/work comfort shoppers, high-repeat customers.</p><div class="offer"><span class="tag">EVENT CHECK-IN</span><b>150 points for fit appointment</b><span>CocoWalk Saturday, Dadeland Sunday.</span></div><div class="offer"><span class="tag">REPLACEMENT REMINDER</span><b>Your Cloud 6 is 8 months old</b><span>Try the newest fit in your size.</span></div></div><div class="navBottom"><div class="navItem">Home</div><div class="navItem active">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">A</div></div><div class="screenContent"><div class="brandHero adidas"><div><div class="brandName">adidas</div><h4>3-Stripes Weekend</h4></div><span class="btn">Unlock Offer</span></div><p class="mini">Target: Originals, school, and lifestyle buyers across Dolphin and Sawgrass.</p><div class="offer"><span class="tag">APP-ONLY</span><b>Bundle footwear + backpack</b><span>Campaign rules controlled by Sportive admin.</span></div><div class="offer"><span class="tag">IMPORTANT</span><b>adiClub points are separate</b><span>Sportive points remain Sportive-owned unless adidas approves integration.</span></div></div><div class="navBottom"><div class="navItem">Home</div><div class="navItem active">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">B</div></div><div class="screenContent"><div class="brandHero nb"><div><div class="brandName">New Balance</div><h4>Fit Lab</h4></div><span class="btn">Find My Fit</span></div><p class="mini">Target: comfort seekers, wide-size buyers, family members, and loyal repeat shoppers.</p><div class="offer"><span class="tag">FIT PROFILE</span><b>Save width + arch preference</b><span>Use profile data to pre-filter recommendations.</span></div><div class="offer"><span class="tag">STORE PICK</span><b>Closest available size</b><span>Dadeland has 10.5 D and 11 D today.</span></div></div><div class="navBottom"><div class="navItem">Home</div><div class="navItem active">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">J</div></div><div class="screenContent"><div class="brandHero jordan"><div><div class="brandName">Jordan</div><h4>Launch Alerts</h4></div><span class="btn">Join Alert List</span></div><p class="mini">Target: high-intent sneaker customers and app members who opt in for release notifications.</p><div class="offer"><span class="tag">SIZE FILTER</span><b>Only alert when my size lands</b><span>Reduce noise and increase conversion.</span></div><div class="offer"><span class="tag">STORE CHECK-IN</span><b>Earn points for launch visit</b><span>Purchase still required for reward qualification.</span></div></div><div class="navBottom"><div class="navItem">Home</div><div class="navItem active">Brands</div><div class="navItem">Wallet</div><div class="navItem">Stores</div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>LTE 100%</span></div><div class="appHead"><img src="assets/sportive_logo_hires_transparent.png"/><div class="avatar">S</div></div><div class="screenContent"><h3>Stores</h3><p class="mini">Mall-specific campaigns and directions connect the app to real foot traffic.</p><div class="storeCard"><b>Sportive Bayside</b><span>401 Biscayne Blvd #N103, Miami</span><div class="storeBtns"><span class="tinyBtn green">Open Offer</span><span class="tinyBtn">Directions</span></div></div><div class="storeCard"><b>Sportive CocoWalk</b><span>3015 Grand Ave #230, Coconut Grove</span><div class="storeBtns"><span class="tinyBtn green">On Event</span><span class="tinyBtn">Call</span></div></div><div class="storeCard"><b>Sawgrass Mall</b><span>12801 W Sunrise Blvd #917, Sunrise</span><div class="storeBtns"><span class="tinyBtn green">Last Pairs</span><span class="tinyBtn">Directions</span></div></div></div><div class="navBottom"><div class="navItem">Home</div><div class="navItem">Brands</div><div class="navItem">Wallet</div><div class="navItem active">Stores</div></div></div></div>
+    </div>
+    <p class="disclaimer">Campaign examples are creative concepts and not a claim that Nike, On, adidas, New Balance, Jordan, or any other manufacturer has approved the use of marks, promotions, rewards, or integrations.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="sectionHeader"><h2>Why this works</h2><p class="sub">The app connects the things Sportive already has - locations, brands, categories, sizes, and ecommerce - into a loyalty engine that can be measured.</p></div>
+    <div class="matrix">
+      <div class="matrixCard"><div class="num">01</div><h3>Personalized fit</h3><p>Save sizes by customer and family member, then use profile data to push only relevant drops, replacements, and back-in-stock alerts.</p></div>
+      <div class="matrixCard"><div class="num">02</div><h3>Brand-led campaigns</h3><p>Make Nike, On, adidas, New Balance, Jordan, and other key brands usable as segmented campaign themes instead of broad site banners.</p></div>
+      <div class="matrixCard"><div class="num">03</div><h3>Store traffic</h3><p>Drive members to Bayside, CocoWalk, Dadeland, Dolphin Mall, and Sawgrass with geofenced events, location-specific offers, and QR redemption.</p></div>
+    </div>
+  </div>
+</section>
+<section id="route" class="section">
+  <div class="wrap routeGrid">
+    <div class="routeBox"><h3>Strategic500 build target</h3><p>The approval site should live at <code>Strategic500.com/sportive</code> as a client-facing sales microsite, app mockup, and implementation handoff hub.</p><div class="checklist"><div class="check">/sportive landing page with executive story, store network, brand campaign strategy, and mockup gallery.</div><div class="check">Download area for deck, PDF, store master seed, and Codex handoff.</div><div class="check">Password-gated admin preview once the client approves MVP scope.</div></div></div>
+    <div>
+      <div class="matrixCard"><div class="num">Build note</div><h3>Codex-ready structure</h3><p>Use a Next.js route if Strategic500 is Next-based. Otherwise ship this as a static React page and mount it at the /sportive path. All assets in this package are prepared for /public/sportive/.</p></div>
+      <div class="matrixCard" style="margin-top:18px"><div class="num">Approval guardrail</div><h3>Brand compliance</h3><p>Manufacturer names are for proposal and segmentation examples. Official logos, co-branded promotions, and manufacturer reward programs must be approved by Sportive and brand reps before launch.</p></div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="wrap footGrid"><div><h2>Ready for client approval and Codex handoff.</h2><p>This mockup is packaged with a presentation, store seed file, and Strategic500 implementation notes for the build team.</p></div><img src="assets/sportive_logo_hires_transparent.png" class="logo" alt="Sportive" /></div>
+</footer>
+</body>
+</html>

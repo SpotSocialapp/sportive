@@ -1,0 +1,6 @@
+store_id,name,address_line_1,address_line_2,city,state,postal_code,phone,source_status,notes
+bayside,Sportive Bayside,401 Biscayne Blvd,#N103,Miami,FL,33132,(305) 603-8506,public website,"Confirm suite number against Google Business Profile and POS location ID."
+cocowalk,Sportive CocoWalk,3015 Grand Ave,#230,Coconut Grove,FL,,(786) 362-5126,public website,"Postal code not shown on Stores page; confirm canonical USPS address."
+dadeland,Sportive Dadeland,7535 N Kendall Dr.,Suite #2416,Miami,FL,33156,(305) 964-9326,public website,"Confirm mall directory name and POS node ID."
+dolphin_mall,Sportive Dolphin Mall,11401 NW 12th St,Suite #256,Miami,FL,33172,,public website,"Phone number not shown on Stores page; confirm before production."
+sawgrass_mall,Sportive Sawgrass Mall,12801 W Sunrise Blvd,Suite #917,Sunrise,FL,33323,,public website,"Phone number not shown on Stores page; confirm before production."

@@ -1,0 +1,509 @@
+:root {
+  --sportive-green: #24841f;
+  --sportive-deep: #0e3b18;
+  --sportive-orange: #e65a12;
+  --sportive-cream: #f8f4ea;
+  --sportive-sand: #efe3ce;
+  --sportive-ink: #142015;
+  --sportive-muted: #596656;
+  --sportive-line: #e0d2bb;
+  --sportive-white: #fffdf8;
+  --sportive-charcoal: #1d2420;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--sportive-white);
+  color: var(--sportive-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sportive-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(248, 244, 234, 0.84), rgba(255, 253, 248, 1) 26%),
+    var(--sportive-white);
+}
+
+.section-band,
+.section-grid {
+  padding: 72px max(24px, calc((100vw - 1180px) / 2));
+}
+
+.section-band {
+  border-bottom: 1px solid var(--sportive-line);
+}
+
+.section-grid {
+  display: grid;
+  gap: 36px;
+  border-bottom: 1px solid var(--sportive-line);
+}
+
+.two-column {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--sportive-orange);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 18px;
+  color: var(--sportive-deep);
+  font-size: 4rem;
+  line-height: 1.02;
+}
+
+h2 {
+  margin-bottom: 0;
+  color: var(--sportive-deep);
+  font-size: 2.15rem;
+  line-height: 1.12;
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: var(--sportive-charcoal);
+  font-size: 1rem;
+}
+
+p {
+  color: var(--sportive-muted);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.hero {
+  min-height: 92vh;
+  display: grid;
+  align-content: space-between;
+  gap: 44px;
+  background:
+    linear-gradient(110deg, rgba(14, 59, 24, 0.08), rgba(230, 90, 18, 0.08)),
+    var(--sportive-cream);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  align-items: center;
+  gap: 54px;
+}
+
+.logo-mark {
+  display: grid;
+  min-height: 320px;
+  align-items: center;
+  border: 1px solid rgba(14, 59, 24, 0.16);
+  background: rgba(255, 253, 248, 0.72);
+  padding: 28px;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  max-width: 680px;
+  font-size: 1.12rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  padding: 13px 18px;
+  font-weight: 800;
+}
+
+.button.primary {
+  background: var(--sportive-green);
+  color: white;
+}
+
+.button.secondary {
+  border-color: var(--sportive-green);
+  background: white;
+  color: var(--sportive-deep);
+}
+
+.hero-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid rgba(14, 59, 24, 0.18);
+  background: rgba(255, 253, 248, 0.74);
+}
+
+.hero-strip span {
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  border-right: 1px solid rgba(14, 59, 24, 0.16);
+  color: var(--sportive-deep);
+  font-weight: 800;
+}
+
+.hero-strip span:last-child {
+  border-right: 0;
+}
+
+.check-list,
+.strategy-list {
+  display: grid;
+  gap: 14px;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: start;
+  border-bottom: 1px solid var(--sportive-line);
+  padding-bottom: 14px;
+}
+
+.check-item span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: var(--sportive-deep);
+  color: white;
+  font-weight: 900;
+}
+
+.check-item p,
+.strategy-list p {
+  margin: 0;
+}
+
+.stores,
+.campaigns,
+.commerce,
+.roadmap-section,
+.approvals {
+  background: #f6f1e6;
+}
+
+.store-grid,
+.campaign-grid,
+.commerce-grid,
+.architecture-grid,
+.approval-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.store-card,
+.campaign-card,
+.commerce-grid article,
+.arch-card,
+.approval-grid article,
+.mini-card,
+.roadmap-step {
+  border: 1px solid var(--sportive-line);
+  background: var(--sportive-white);
+  padding: 20px;
+}
+
+.store-card {
+  min-height: 162px;
+}
+
+.store-card h3 {
+  color: var(--sportive-deep);
+}
+
+.store-card p {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.media-section {
+  gap: 28px;
+}
+
+.mockup-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.montage-frame {
+  overflow: hidden;
+  border: 1px solid var(--sportive-line);
+  background: var(--sportive-sand);
+}
+
+.montage-frame img {
+  display: block;
+  width: 100%;
+}
+
+.mockup-list {
+  display: grid;
+  gap: 12px;
+}
+
+.mini-card {
+  min-height: 108px;
+}
+
+.mini-card p,
+.campaign-card p,
+.commerce-grid p,
+.arch-card p,
+.approval-grid p,
+.roadmap-step p {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+}
+
+.campaign-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.campaign-card {
+  min-height: 178px;
+  border-top: 4px solid var(--sportive-orange);
+}
+
+.disclaimer,
+.footer-disclaimer {
+  margin-top: 28px;
+  border: 1px solid rgba(230, 90, 18, 0.35);
+  background: #fff8ef;
+  padding: 20px;
+}
+
+.disclaimer strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--sportive-deep);
+}
+
+.disclaimer p,
+.footer-disclaimer p {
+  margin-bottom: 0;
+  color: #4c3f34;
+  font-size: 0.95rem;
+}
+
+.strategy-list p {
+  border-left: 4px solid var(--sportive-green);
+  background: #f7faf4;
+  padding: 14px 16px;
+}
+
+.commerce-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.commerce-grid article {
+  min-height: 188px;
+}
+
+.architecture-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.arch-card {
+  min-height: 168px;
+  background: #ffffff;
+}
+
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.roadmap-step {
+  min-height: 198px;
+  position: relative;
+}
+
+.roadmap-step span {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  margin-bottom: 18px;
+  background: var(--sportive-deep);
+  color: white;
+  font-weight: 900;
+}
+
+.downloads {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.download-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.download-link {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid var(--sportive-line);
+  background: #ffffff;
+  padding: 15px 18px;
+  color: var(--sportive-deep);
+  font-weight: 800;
+}
+
+.download-link:hover,
+.button:hover {
+  filter: brightness(0.96);
+}
+
+.approval-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.approval-grid article {
+  min-height: 172px;
+}
+
+.not-found {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  gap: 16px;
+  padding: 48px max(24px, calc((100vw - 840px) / 2));
+  background: var(--sportive-cream);
+}
+
+.not-found h1 {
+  max-width: 640px;
+  font-size: 2.6rem;
+}
+
+@media (max-width: 1020px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content,
+  .two-column,
+  .downloads,
+  .mockup-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .store-grid,
+  .campaign-grid,
+  .architecture-grid,
+  .roadmap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .commerce-grid,
+  .approval-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-band,
+  .section-grid {
+    padding: 48px 18px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .logo-mark {
+    min-height: 210px;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 2.32rem;
+  }
+
+  h2 {
+    font-size: 1.52rem;
+  }
+
+  .hero-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-strip span {
+    border-right: 0;
+    border-bottom: 1px solid rgba(14, 59, 24, 0.16);
+  }
+
+  .hero-strip span:last-child {
+    border-bottom: 0;
+  }
+
+  .store-grid,
+  .campaign-grid,
+  .architecture-grid,
+  .roadmap {
+    grid-template-columns: 1fr;
+  }
+
+  .button,
+  .download-link {
+    width: 100%;
+  }
+}
