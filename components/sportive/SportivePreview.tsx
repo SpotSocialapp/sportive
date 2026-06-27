@@ -12,11 +12,11 @@ const findings = [
 ];
 
 const stores = [
-  ["Bayside", "401 Biscayne Blvd, #N103", "Miami, FL 33132"],
-  ["CocoWalk", "3015 Grand Ave, #230", "Coconut Grove, FL"],
-  ["Dadeland", "7535 N Kendall Dr., Suite #2416", "Miami, FL 33156"],
-  ["Dolphin Mall", "11401 NW 12th St, Suite #256", "Miami, FL 33172"],
-  ["Sawgrass Mall", "12801 W Sunrise Blvd, Suite #917", "Sunrise, FL 33323"]
+  ["Bayside", "401 Biscayne Blvd, #N103", "Miami, FL 33132", "https://www.google.com/maps/search/?api=1&query=Sportive%20Bayside%20401%20Biscayne%20Blvd%20Miami%20FL"],
+  ["CocoWalk", "3015 Grand Ave, #230", "Coconut Grove, FL", "https://www.google.com/maps/search/?api=1&query=Sportive%20CocoWalk%203015%20Grand%20Ave%20Coconut%20Grove%20FL"],
+  ["Dadeland", "7535 N Kendall Dr., Suite #2416", "Miami, FL 33156", "https://www.google.com/maps/search/?api=1&query=Sportive%20Dadeland%207535%20N%20Kendall%20Dr%20Miami%20FL"],
+  ["Dolphin Mall", "11401 NW 12th St, Suite #256", "Miami, FL 33172", "https://www.google.com/maps/search/?api=1&query=Sportive%20Dolphin%20Mall%2011401%20NW%2012th%20St%20Miami%20FL"],
+  ["Sawgrass Mall", "12801 W Sunrise Blvd, Suite #917", "Sunrise, FL 33323", "https://www.google.com/maps/search/?api=1&query=Sportive%20Sawgrass%20Mall%2012801%20W%20Sunrise%20Blvd%20Sunrise%20FL"]
 ];
 
 const mockups = [
@@ -108,6 +108,27 @@ const campaignMedia = [
   ]
 ];
 
+const adConcepts = [
+  {
+    title: "Launch campaign world",
+    body: "A cinematic retail system for the loyalty app, store pickup, and member wallet.",
+    src: "/sportive/creative/sportive-rewards-hero-art.png",
+    href: "/sportive/creative/sportive-rewards-hero-art.png"
+  },
+  {
+    title: "Campaign triptych",
+    body: "Drop Zone, Comfort Test, and Fit Lab as a repeatable ad platform.",
+    src: "/sportive/creative/sportive-campaign-triptych.png",
+    href: "/sportive/creative/sportive-campaign-triptych.png"
+  },
+  {
+    title: "Offer ad units",
+    body: "Last Pairs, New Arrivals, Visit Bonus, and Birthday Reward as shoppable creative.",
+    src: "/sportive/creative/sportive-ad-unit-board.png",
+    href: "/sportive/creative/sportive-ad-unit-board.png"
+  }
+];
+
 const deckGallery = [
   "Cover",
   "Executive answer",
@@ -140,34 +161,31 @@ export default function SportivePreview() {
   return (
     <main className="sportive-page">
       <section className="hero section-band">
+        <Image
+          className="hero-art"
+          src="/sportive/creative/sportive-rewards-hero-art.png"
+          alt="Sportive Rewards premium retail campaign artwork"
+          width={1792}
+          height={1024}
+          priority
+        />
+        <div className="hero-shade" />
         <div className="hero-content">
-          <div className="hero-media-stack">
-            <div className="logo-mark">
-              <Image
-                src="/sportive/sportive_logo_hires_transparent.png"
-                alt="Sportive"
-                width={760}
-                height={250}
-                priority
-              />
-            </div>
-            <div className="hero-slide">
-              <Image
-                src="/sportive/media/slide-01.png"
-                alt="Sportive Rewards client presentation cover"
-                width={1467}
-                height={825}
-                priority
-              />
-            </div>
+          <div className="hero-lockup">
+            <Image
+              src="/sportive/sportive_logo_hires_transparent.png"
+              alt="Sportive"
+              width={760}
+              height={250}
+              priority
+            />
           </div>
           <div className="hero-copy">
             <p className="eyebrow">Client preview hub</p>
-            <h1>Sportive Rewards loyalty app preview</h1>
+            <h1>Sportive Rewards campaign launch system</h1>
             <p>
-              A polished approval and implementation view for an omnichannel loyalty
-              program spanning Sportive stores, ecommerce, branded campaigns, and
-              future POS integrations.
+              A premium creative and implementation preview for loyalty, retail
+              media, member offers, store traffic, and future POS integrations.
             </p>
             <div className="hero-actions" aria-label="Primary actions">
               <a
@@ -184,6 +202,13 @@ export default function SportivePreview() {
               >
                 Download deck
               </a>
+              <a
+                className="button glass"
+                href="#ad-concepts"
+                data-analytics-todo="view_ad_concepts_click"
+              >
+                View ad concepts
+              </a>
             </div>
           </div>
         </div>
@@ -196,25 +221,45 @@ export default function SportivePreview() {
         </div>
       </section>
 
-      <section className="section-grid media-library">
+      <section className="section-grid media-library" id="media">
         <div className="section-heading">
           <p className="eyebrow">Media</p>
           <h2>Client deck visuals are embedded throughout the preview.</h2>
         </div>
         <div className="media-card-grid">
           {mediaSlides.map(([title, body, src]) => (
-            <article className="media-card" key={title}>
+            <a className="media-card" href={src} key={title}>
               <Image src={src} alt={`${title} slide`} width={1467} height={825} />
               <div>
                 <h3>{title}</h3>
                 <p>{body}</p>
+                <span>Open visual</span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>
 
-      <section className="section-band interactive-preview">
+      <section className="section-band creative-showcase" id="ad-concepts">
+        <div className="section-heading">
+          <p className="eyebrow">Ad concepts and art</p>
+          <h2>A campaign system that feels launch-ready, not placeholder.</h2>
+        </div>
+        <div className="ad-showcase">
+          {adConcepts.map(({ title, body, src, href }, index) => (
+            <a className={index === 0 ? "ad-card feature" : "ad-card"} href={href} key={title}>
+              <Image src={src} alt={`${title} creative artwork`} width={1792} height={1024} />
+              <div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-band interactive-preview" id="interactive">
         <div className="section-with-media interactive-layout">
           <div className="section-heading">
             <p className="eyebrow">Interactive media</p>
@@ -273,12 +318,13 @@ export default function SportivePreview() {
           </div>
         </div>
         <div className="store-grid">
-          {stores.map(([name, line1, line2]) => (
-            <article className="store-card" key={name}>
+          {stores.map(([name, line1, line2, href]) => (
+            <a className="store-card" href={href} target="_blank" rel="noreferrer" key={name}>
               <h3>{name}</h3>
               <p>{line1}</p>
               <p>{line2}</p>
-            </article>
+              <span>Open map</span>
+            </a>
           ))}
         </div>
       </section>
@@ -309,46 +355,48 @@ export default function SportivePreview() {
         </div>
       </section>
 
-      <section className="section-band deck-gallery-section">
+      <section className="section-band deck-gallery-section" id="deck-gallery">
         <div className="section-heading">
           <p className="eyebrow">Deck media library</p>
           <h2>Every presentation slide is available as browseable page media.</h2>
         </div>
         <div className="deck-gallery" aria-label="Sportive Rewards presentation slide thumbnails">
           {deckGallery.map(({ title, src }, index) => (
-            <figure className="deck-thumb" key={src}>
+            <a className="deck-thumb" href={src} key={src}>
               <Image src={src} alt={`${title} slide thumbnail`} width={1467} height={825} />
-              <figcaption>
+              <span className="deck-caption">
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 {title}
-              </figcaption>
-            </figure>
+              </span>
+            </a>
           ))}
         </div>
       </section>
 
-      <section className="section-band campaigns">
+      <section className="section-band campaigns" id="campaigns">
         <div className="section-heading">
           <p className="eyebrow">Branded campaign mockups</p>
           <h2>Campaign concepts show how rewards can become retail moments.</h2>
         </div>
         <div className="campaign-media-grid">
           {campaignMedia.map(([title, body, src]) => (
-            <article className="campaign-media" key={title}>
+            <a className="campaign-media" href={src} key={title}>
               <Image src={src} alt={`${title} slide`} width={1467} height={825} />
               <div>
                 <h3>{title}</h3>
                 <p>{body}</p>
+                <span>Open campaign board</span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
         <div className="campaign-grid">
           {campaigns.map(([title, body]) => (
-            <article className="campaign-card" key={title}>
+            <a className="campaign-card" href="/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns" key={title}>
               <h3>{title}</h3>
               <p>{body}</p>
-            </article>
+              <span>View in mockup</span>
+            </a>
           ))}
         </div>
         <aside className="disclaimer">
