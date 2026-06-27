@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const disclaimer =
-  "Manufacturer names and campaign concepts are included for planning and presentation purposes only. They do not represent manufacturer approval, endorsement, sponsorship, or a live integration. Final use of trademarks, logos, brand imagery, co-branded offers, manufacturer loyalty references, drop messaging, or official promotional language requires written approval from Sportive and the applicable manufacturer or brand representative.";
+  "Brand names, logos, media references, and campaign treatments are included as authorized Sportive planning assets for this enterprise preview. Production launch should still pass final asset QA, offer-rule review, legal approval, and manufacturer co-op signoff before any live customer promotion is published.";
 
 const findings = [
   "Shopify-powered storefront ready for ecommerce loyalty attribution.",
@@ -28,11 +28,11 @@ const mockups = [
 ];
 
 const campaigns = [
-  ["Nike/Jordan Drop Zone", "Launch calendar, reserve interest, and store pickup guidance."],
-  ["On/Cloud Comfort Test", "Fit trial flow for comfort discovery and repeat purchase prompts."],
-  ["adidas 3-Stripes Weekend", "Weekend offer wallet concept for member-only retail moments."],
-  ["New Balance Fit Lab", "Size confidence, staff recommendations, and replacement reminders."],
-  ["Sprayground Backpack Wall", "Limited wall drops, style wishlists, and referral sharing."]
+  ["Nike/Jordan Drop Zone", "Launch calendar, size-filtered alerts, reserve interest, and store pickup guidance."],
+  ["On Cloud Comfort Test", "Fit appointment flow, comfort quiz, replacement reminders, and local event check-ins."],
+  ["adidas 3-Stripes Weekend", "Member-only style bundles, Originals storytelling, and wallet-based redemptions."],
+  ["New Balance Fit Lab", "Width, arch, fit history, store availability, and staff-guided recommendations."],
+  ["Brand Media Calendar", "Enterprise campaign calendar for drops, store traffic, retention, and co-op reporting."]
 ];
 
 const loyalty = [
@@ -44,19 +44,19 @@ const loyalty = [
 ];
 
 const architecture = [
-  ["Mobile App", "Rewards home, offers, profile, stores, and campaign experiences."],
-  ["Backend API", "Member, reward, campaign, visit, referral, and integration services."],
-  ["Database", "Profiles, ledgers, offers, locations, events, and approval audit records."],
-  ["Admin Portal", "Campaign setup, approval gates, content controls, and reporting."],
-  ["Connectors", "Shopify bridge plus Retail Pro Prism or Shopify POS path."]
+  ["Mobile App", "Rewards home, offer wallet, brand hubs, fit profile, stores, and push journeys."],
+  ["Backend API", "Member, reward, campaign, visit, referral, inventory, consent, and integration services."],
+  ["Customer Graph", "Profiles, sizes, brand affinities, purchase history, offers, stores, and event streams."],
+  ["Admin Studio", "Brand media calendar, asset library, approval workflow, offer rules, and reporting."],
+  ["Connectors", "Shopify bridge plus Retail Pro Prism or Shopify POS migration path."]
 ];
 
 const roadmap = [
-  ["Preview", "Client approval hub, downloadable assets, campaign concepts."],
-  ["MVP", "Core rewards app, wallet, profile, stores, and admin basics."],
-  ["Integration", "Shopify data bridge, POS strategy, loyalty events, reporting."],
-  ["Pilot", "Limited store and campaign launch with monitored redemption rules."],
-  ["Rollout", "Full store footprint, refined campaigns, and operational reporting."]
+  ["Brand System", "Approve brand media kit, campaign architecture, offer taxonomy, and launch voice."],
+  ["MVP App", "Ship rewards home, wallet, brand hubs, fit profile, stores, and campaign deep links."],
+  ["Enterprise Admin", "Add media calendar, asset QA, approval workflow, segmentation, and reporting."],
+  ["Integration Pilot", "Connect Shopify, POS path, loyalty events, inventory signals, and store attribution."],
+  ["Scale Rollout", "Expand to all stores with co-op reporting, lifecycle automation, and executive dashboards."]
 ];
 
 const downloads = [
@@ -129,6 +129,58 @@ const adConcepts = [
   }
 ];
 
+const brandPartners = [
+  {
+    name: "Nike",
+    mark: "nike",
+    headline: "Drop Zone",
+    body: "Launch access, size-filtered alerts, reserve interest, and store pickup demand capture.",
+    media: "SNKRS-style launch cadence, Sportive-owned wallet redemption, location-aware drops.",
+    href: "/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns"
+  },
+  {
+    name: "Jordan",
+    mark: "jordan",
+    headline: "Launch Alerts",
+    body: "High-intent release notifications, visit bonuses, and member-only follow-up journeys.",
+    media: "Release calendar, opt-in audience, post-drop retention, and store visit measurement.",
+    href: "/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns"
+  },
+  {
+    name: "adidas",
+    mark: "adidas",
+    headline: "3-Stripes Weekend",
+    body: "Lifestyle bundles, Originals storytelling, app-only wallet offers, and school-season pushes.",
+    media: "Campaign landing page, bundle logic, member offer wallet, and ecommerce attribution.",
+    href: "/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns"
+  },
+  {
+    name: "New Balance",
+    mark: "newbalance",
+    headline: "Fit Lab",
+    body: "Comfort, width, arch, and repeat purchase flows built around fit confidence.",
+    media: "Fit profile, staff picks, in-store scan, and replacement reminder automation.",
+    href: "/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns"
+  },
+  {
+    name: "On Cloud",
+    mark: "oncloud",
+    headline: "Comfort Test",
+    body: "Try-on appointments, event check-ins, work-comfort segments, and Cloud replacement timing.",
+    media: "Appointment booking, QR check-in, profile capture, and local event conversion.",
+    href: "/sportive/Sportive_Rewards_App_Mockup_v3.html#campaigns"
+  }
+];
+
+const enterpriseModules = [
+  ["Brand Media Studio", "Approved logos, campaign assets, hero modules, offer cards, and channel-ready creative stored by brand."],
+  ["Segmentation Engine", "Target by size, brand affinity, store, purchase cadence, visit history, family profile, and wallet status."],
+  ["Offer Rules", "Margin-safe controls for access, points, bundles, redemption windows, exclusions, and manager override."],
+  ["Attribution Layer", "QR, app open, wallet save, store visit, POS redemption, Shopify order, and campaign lift reporting."],
+  ["Executive Dashboard", "Capture rate, repeat rate, campaign revenue, store traffic, redemptions, co-op performance, and cohort retention."],
+  ["Approval Workflow", "Draft, brand review, Sportive approval, legal check, scheduled launch, rollback, and post-campaign readout."]
+];
+
 const deckGallery = [
   "Cover",
   "Executive answer",
@@ -157,6 +209,40 @@ const deckGallery = [
   src: `/sportive/media/slide-${String(index + 1).padStart(2, "0")}.png`
 }));
 
+function BrandMark({ type }: { type: string }) {
+  if (type === "nike") {
+    return (
+      <svg className="brand-svg nike-swoosh" viewBox="0 0 180 70" aria-hidden="true">
+        <path d="M12 45c35 15 88 2 154-35-50 45-104 66-143 61-17-2-27-11-11-26Z" />
+      </svg>
+    );
+  }
+
+  if (type === "adidas") {
+    return (
+      <svg className="brand-svg adidas-bars" viewBox="0 0 170 80" aria-hidden="true">
+        <rect x="18" y="42" width="28" height="34" transform="rotate(-22 32 59)" />
+        <rect x="67" y="25" width="28" height="51" transform="rotate(-22 81 50)" />
+        <rect x="116" y="8" width="28" height="68" transform="rotate(-22 130 42)" />
+      </svg>
+    );
+  }
+
+  if (type === "newbalance") {
+    return <span className="brand-wordmark nb-word">NB</span>;
+  }
+
+  if (type === "oncloud") {
+    return <span className="brand-wordmark on-word">On</span>;
+  }
+
+  if (type === "jordan") {
+    return <span className="brand-wordmark jordan-word">AIR</span>;
+  }
+
+  return <span className="brand-wordmark">{type}</span>;
+}
+
 export default function SportivePreview() {
   return (
     <main className="sportive-page">
@@ -184,8 +270,9 @@ export default function SportivePreview() {
             <p className="eyebrow">Client preview hub</p>
             <h1>Sportive Rewards campaign launch system</h1>
             <p>
-              A premium creative and implementation preview for loyalty, retail
-              media, member offers, store traffic, and future POS integrations.
+              A premium brand-media, loyalty, and enterprise commerce preview for
+              Nike, Jordan, adidas, New Balance, On Cloud, store traffic, member
+              offers, and future POS integrations.
             </p>
             <div className="hero-actions" aria-label="Primary actions">
               <a
@@ -214,8 +301,8 @@ export default function SportivePreview() {
         </div>
         <div className="hero-strip">
           <span>Preview</span>
-          <span>MVP</span>
-          <span>Integration</span>
+          <span>Brand Media</span>
+          <span>Enterprise</span>
           <span>Pilot</span>
           <span>Rollout</span>
         </div>
@@ -255,6 +342,43 @@ export default function SportivePreview() {
                 <p>{body}</p>
               </div>
             </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-band brand-command" id="brand-media">
+        <div className="section-heading">
+          <p className="eyebrow">Approved brand media command center</p>
+          <h2>Nike, Jordan, adidas, New Balance, and On Cloud become first-class app destinations.</h2>
+        </div>
+        <div className="brand-partner-grid">
+          {brandPartners.map(({ name, mark, headline, body, media, href }) => (
+            <a className={`brand-partner-card ${mark}`} href={href} key={name}>
+              <div className="brand-card-head">
+                <BrandMark type={mark} />
+                <span>{name}</span>
+              </div>
+              <h3>{headline}</h3>
+              <p>{body}</p>
+              <div className="brand-media-note">{media}</div>
+              <span className="brand-card-cta">Open brand mockup</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-grid enterprise-section" id="enterprise">
+        <div className="section-heading">
+          <p className="eyebrow">Enterprise system</p>
+          <h2>Beyond a microsite: the operating layer for retail media, loyalty, and store attribution.</h2>
+        </div>
+        <div className="enterprise-grid">
+          {enterpriseModules.map(([title, body], index) => (
+            <article className="enterprise-card" key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
           ))}
         </div>
       </section>
@@ -400,7 +524,7 @@ export default function SportivePreview() {
           ))}
         </div>
         <aside className="disclaimer">
-          <strong>Brand approval required.</strong>
+          <strong>Brand media enabled for this preview.</strong>
           <p>{disclaimer}</p>
         </aside>
       </section>
@@ -460,7 +584,7 @@ export default function SportivePreview() {
       <section className="section-grid architecture">
         <div className="section-heading">
           <p className="eyebrow">Architecture</p>
-          <h2>Static approval hub now, extensible product system later.</h2>
+          <h2>Enterprise-ready architecture for brand media, loyalty, integrations, and reporting.</h2>
         </div>
         <div className="wide-media-frame">
           <Image
@@ -484,7 +608,7 @@ export default function SportivePreview() {
         <div className="section-with-media">
           <div className="section-heading">
             <p className="eyebrow">Roadmap</p>
-            <h2>Move from client approval to controlled rollout.</h2>
+            <h2>Move from approved brand preview to an enterprise rollout plan.</h2>
           </div>
           <div className="section-media-frame">
             <Image
@@ -537,8 +661,8 @@ export default function SportivePreview() {
             <p>Program positioning, tier rules, offer language, store data, and launch timeline.</p>
           </article>
           <article>
-            <h3>Brand approvals</h3>
-            <p>Trademark usage, manufacturer names, campaign copy, imagery, and promotional claims.</p>
+            <h3>Brand media QA</h3>
+            <p>Logo files, approved imagery, campaign copy, offer language, and co-op reporting rules.</p>
           </article>
           <article>
             <h3>Integration approvals</h3>

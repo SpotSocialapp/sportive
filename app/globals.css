@@ -376,6 +376,185 @@ p {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.brand-command {
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(239, 227, 206, 0.92)),
+    var(--sportive-cream);
+}
+
+.brand-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 38px;
+}
+
+.brand-partner-card {
+  min-height: 360px;
+  display: grid;
+  align-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(14, 59, 24, 0.14);
+  background: #ffffff;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.brand-partner-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -48px -72px auto;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: rgba(230, 90, 18, 0.14);
+}
+
+.brand-partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 56px rgba(14, 59, 24, 0.18);
+}
+
+.brand-card-head {
+  min-height: 94px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.brand-card-head > span {
+  color: var(--sportive-muted);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.brand-svg {
+  width: 116px;
+  height: 54px;
+  fill: currentColor;
+}
+
+.nike-swoosh,
+.adidas-bars {
+  color: #111111;
+}
+
+.brand-wordmark {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  color: #111111;
+  font-size: 3.4rem;
+  font-weight: 950;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+}
+
+.nb-word {
+  color: #b41226;
+  font-style: italic;
+}
+
+.on-word {
+  color: #111111;
+  font-size: 3.7rem;
+  letter-spacing: -0.12em;
+}
+
+.jordan-word {
+  color: #111111;
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+}
+
+.brand-partner-card h3 {
+  color: var(--sportive-deep);
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.brand-partner-card p {
+  margin-bottom: 0;
+  color: var(--sportive-ink);
+  font-weight: 680;
+}
+
+.brand-media-note {
+  border-left: 4px solid var(--sportive-orange);
+  background: #f8f4ea;
+  padding: 12px 14px;
+  color: #4b5548;
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+
+.brand-card-cta {
+  color: var(--sportive-orange);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.brand-partner-card.nike,
+.brand-partner-card.jordan {
+  background: linear-gradient(180deg, #ffffff, #f2f2ef);
+}
+
+.brand-partner-card.adidas {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.brand-partner-card.newbalance {
+  background: linear-gradient(180deg, #ffffff, #fff5f5);
+}
+
+.brand-partner-card.oncloud {
+  background: linear-gradient(180deg, #ffffff, #eef0f3);
+}
+
+.enterprise-section {
+  background: var(--sportive-white);
+}
+
+.enterprise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.enterprise-card {
+  min-height: 230px;
+  border: 1px solid var(--sportive-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 244, 234, 0.82)),
+    #ffffff;
+  padding: 22px;
+}
+
+.enterprise-card > span {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  margin-bottom: 22px;
+  background: var(--sportive-deep);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.enterprise-card h3 {
+  color: var(--sportive-deep);
+  font-size: 1.22rem;
+}
+
+.enterprise-card p {
+  margin-bottom: 0;
+}
+
 .section-with-media {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1.18fr);
@@ -752,6 +931,8 @@ p {
 
   .campaign-media-grid,
   .commerce-grid,
+  .brand-partner-grid,
+  .enterprise-grid,
   .approval-grid {
     grid-template-columns: 1fr;
   }
@@ -797,6 +978,8 @@ p {
   .campaign-grid,
   .media-card-grid,
   .deck-gallery,
+  .brand-partner-grid,
+  .enterprise-grid,
   .architecture-grid,
   .roadmap {
     grid-template-columns: 1fr;
